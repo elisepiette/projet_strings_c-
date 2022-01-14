@@ -1,3 +1,5 @@
+#include<iostream>
+
 #include "string.h"
 string::string(){
   _str[0]='\0';
@@ -12,3 +14,16 @@ string::string(const char *str){
   this->_str[i]='\0';
   this->_len=i;
 }
+/*  a = nullptr;
+  len = 0;
+}
+
+string::string(const string& copie){
+  a=nullptr;
+  a=copie.a;
+  len=copie.len;
+}
+
+string operator= (char c){
+  *a=c;
+  */

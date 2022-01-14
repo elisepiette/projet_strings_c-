@@ -5,4 +5,8 @@ class string {
   public:
     string();
     string(const char *str);
+/*
+    string(const string& copie);
+    string operator= (char c);
 };
+*/
