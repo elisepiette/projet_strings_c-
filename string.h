@@ -9,11 +9,8 @@ class string {
     string(const string *str);
 
     //accessor
-    string get_str() const;
+    const char* get_str() const;
     int get_len() const;
-/*
-    string(const string& copie);
-    string operator= (char c);
-};
-*/
+    string resize(size_t size, char ch);
+    int length() const;
 };

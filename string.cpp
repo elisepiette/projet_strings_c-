@@ -15,7 +15,7 @@ string::string(const char *str){
   this->_len=i;
 }
 
-string string::get_str() const {
+const char* string::get_str() const {
   return _str;
 }
 
@@ -23,20 +23,7 @@ int string::get_len() const {
   return _len;
 }
 
-/*  a = nullptr;
-  len = 0;
-}
-
-string::string(const string& copie){
-  a=nullptr;
-  a=copie.a;
-  len=copie.len;
-}
-
-string operator= (char c){
-  *a=c;
-
-
+/*
   string::string(const string& str){
     int i;
     for (i=0; i<(str->_len); i++){
