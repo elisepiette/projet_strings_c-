@@ -2,8 +2,14 @@
 #include "string.h"
 
 int main(){
-  string str;
-  //string copiedustring(str);
-  str='j';
+
+  //test constructeur
+  string a();
+  string b("exemple");
+  string c(b);
+  //std::cout << a <<std::endl;
+  //std::cout << b <<std::endl;
+  //std::cout << c <<std::endl;
+
   return 0;
 }
