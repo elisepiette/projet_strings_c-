@@ -15,16 +15,19 @@ int main(){
   std::cout << "c: " << c.get_str() <<" of length "<<c.get_len()<<std::endl;*/
 
   string a("exemple");
-  std::cout << "a: " << a.get_str() << " of length "<<a.get_len()<<std::endl;
+  std::cout << "a: " << a.get_str() << " of length "<< a.size()<< std::endl;
   const char* new_p=a.c_str();
   std::cout << "nouveau pointeur : " << new_p<<std::endl;
-  std::cout << "The size of a is " << a.size() << " bytes.\n";
   string b(a);
-  std::cout << "b: " << b.get_str() << " of length "<<b.get_len()<<std::endl;
+  std::cout << "b: " << b.get_str() << " of length "<<b.size()<<std::endl;
   b.clear();
-  std::cout << "Apres clear, b: " << b.get_str() << " of length "<<b.get_len()<<std::endl;
+  std::cout << "Apres clear, b: " << b.get_str() << " of length "<<b.size()<<std::endl;
   string c;
   c='x';
-  std::cout << "c: " << c.get_str() << " of length "<<c.get_len()<<std::endl;
+  std::cout << "c: " << c.get_str() << " of length "<<c.size()<<std::endl;
+  string d;
+  //d=a+("youhou");
+  /*d=a+new_p;
+  std::cout << "d: " << d.get_str() << " of length "<<d.size()<<std::endl;*/
   return 0;
 }
