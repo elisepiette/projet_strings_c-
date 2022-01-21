@@ -17,6 +17,7 @@ class string {
     size_t size() const;
     void clear();
     string operator= (char c);
+    const char get_char(int i) const;
 
 };
-//string operator+ (const string& str, const char* a);
+string operator+ (const string& str, const char* a);

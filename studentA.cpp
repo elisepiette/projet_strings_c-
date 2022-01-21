@@ -39,22 +39,26 @@ string string::operator= (char c){ //normalement string& au lieu de string
   return p;
 }
 
-/*string operator+ (const string& str, const char* a){
+string operator+ (const string& str, const char* a){
   int i =0;
   while (a[i]!='\0'){
     i+=1;
   }
-  string add;
-  int size=i+str.size()
-  add.p=new char[size];
-  for (int j=0;j++;j<str.size()){
-    add.p[j]=str[j];
+  int b=str.size();
+  int size=i+b;
+  char* add=new char[size];
+
+  for (int j=0;j<b;j++){
+    add[j]=str.get_char(j);
   }
+
   int k=0;
-  for (j;j++;j<(j+i)){
-    add.p[j]=a[k]
+  for (int j=b;j<size;j++){
+    add[j]=a[k];
     k+=1;
   }
-  return add;
 
-}*/
+  string final(add);
+  return final;
+
+}

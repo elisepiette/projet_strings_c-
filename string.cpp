@@ -11,7 +11,6 @@ string::string(const char* str){
   while (str[i]!='\0'){
     i+=1;
   }
-  std::cout<<i<<std::endl;
   int size=i;
   memcpy(p,str, size);
   this->p[size]='\0';
@@ -26,6 +25,11 @@ string::string(const char* str){
 const char* string::get_str() const {
   return p;
 }
+
+const char string::get_char(int i) const {
+  return p[i];
+}
+
 
 /*int string::get_len() const {
   return _len;
