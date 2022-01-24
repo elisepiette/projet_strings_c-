@@ -25,11 +25,11 @@ int main(){
   //std::cout << "Apres clear, a: " << a.get_str() << " of length "<<a.size()<<std::endl;
   string c;
   c='x';
-  std::cout << "c: " << c.get_str() << " of length "<<c.size()<<std::endl;
-  string e("sympa");
+  std::cout << "c: " << c.c_str() << " of length "<<c.size()<<std::endl;
+  string e(" sympa");
   const char* new_p2=e.c_str();
   string d;
   d=a+new_p2;
-  std::cout << "d: " << d.get_str() << " of length "<<d.size()<<std::endl;
+  std::cout << "d: " << d.c_str() << " of length "<<d.size()<<std::endl;
   return 0;
 }
