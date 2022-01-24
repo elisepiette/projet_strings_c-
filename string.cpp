@@ -20,9 +20,6 @@ string::~string(){
   delete p;
 }
 
-const char* string::get_str() const {
-  return p;
-}
 
 const char string::get_char(int i) const {
   return p[i];

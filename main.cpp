@@ -23,6 +23,7 @@ int main(){
   //b.clear();
   //std::cout << "Apres clear, b: " << b.get_str() << " of length "<<b.size()<<std::endl;
   //std::cout << "Apres clear, a: " << a.get_str() << " of length "<<a.size()<<std::endl;
+
   string c;
   c='x';
   std::cout << "c: " << c.c_str() << " of length "<<c.size()<<std::endl;
