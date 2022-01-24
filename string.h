@@ -20,6 +20,7 @@ class string {
     //studentA
     void clear();
     string operator= (char c);
+    string& operator= (const string& str);
     const char get_char(int i) const;
 
 };

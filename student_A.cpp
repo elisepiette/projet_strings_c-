@@ -31,12 +31,24 @@ void string::clear(){
 }
 
 string string::operator= (char c){ //normalement string& au lieu de string
+  delete (p);
   p = new char[2];
   p[0]=c;
   p[1]='\0';
   //_len=1;
   //const char s=_str;
   return p;
+}
+string& string::operator= (const string& str){
+  delete (p);
+  p=new char[str.size()];
+  int i=0;
+  for(i=0;i<str.size();i++){
+    this->p[i]=str.p[i];
+
+  }
+  this->p[i]='\0';
+  return *this;
 }
 
 string operator+ (const string& str, const char* a){
@@ -60,5 +72,4 @@ string operator+ (const string& str, const char* a){
 
   string final(add);
   return final;
-
 }
