@@ -13,15 +13,19 @@ class string {
     //accessor
     const char* c_str() const;
     size_t size() const;
-
-    //string resize(size_t size, char ch);
-    //int length() const;
+    int length() const;
 
     //studentA
     void clear();
     string operator= (char c);
-    string& operator= (const string& str);
     const char get_char(int i) const;
+
+    //student B
+    string& operator= (const string& str);
+    int max_size();
+    string& resize(int size, char ch);
+    //string operator+ (const string&, char);
+
 
 };
 string operator+ (const string& str, const char* a);

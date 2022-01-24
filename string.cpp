@@ -22,7 +22,6 @@ string::~string(){
   delete (p);
 }
 
-
 const char string::get_char(int i) const {
   return p[i];
 }

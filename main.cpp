@@ -35,5 +35,10 @@ int main(){
   d=a+new_p2;
   //d.clear();
   std::cout << "d: " << d.c_str() << " of length "<<d.size()<<std::endl;
+  string x("exemple");
+  x.resize(3,'a');
+  std::cout << "x: " << x.c_str() << " of length "<<x.size()<<std::endl;
+  x.resize(10,'o');
+  std::cout << "x: " << x.c_str() << " of length "<<x.size()<<std::endl;
   return 0;
 }
