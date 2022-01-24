@@ -1,6 +1,7 @@
 class string {
   protected:
     char* p;
+
   public:
     //constructor
     string();
@@ -26,6 +27,9 @@ class string {
     string& resize(int size, char ch);
     //string operator+ (const string&, char);
 
+    //studentC
+    string operator=(const char* c);
 
 };
 string operator+ (const string& str, const char* a);
+string operator+ (const string&, const string&);

@@ -30,15 +30,31 @@ int main(){
   string e(" sympa");
   std::cout << "e: " << e.c_str() << " of length "<<e.size()<<std::endl;
   const char* new_p2=e.c_str();
+
   string d;
   d=a;
-  d=a+new_p2;
+  //d=a+new_p2;
   //d.clear();
   std::cout << "d: " << d.c_str() << " of length "<<d.size()<<std::endl;
+  std::cout << "a: " << a.c_str() << " of length "<< a.size()<< std::endl;
+
   string x("exemple");
   x.resize(3,'a');
   std::cout << "x: " << x.c_str() << " of length "<<x.size()<<std::endl;
   x.resize(10,'o');
   std::cout << "x: " << x.c_str() << " of length "<<x.size()<<std::endl;
+
+  std::cout<<"------ Tests student C ------ "<<std::endl;
+/*  string t;
+  t="Hola ";
+  std::cout<<t.c_str()<<std::endl;
+  std::cout<<t.size()<<std::endl;
+*/
+
+  string s1="Hello";
+  string s2="World";
+  string sum=s1+s2;
+  std::cout << sum.c_str()<<" of size "<<sum.size()<<std::endl;
   return 0;
+
 }
