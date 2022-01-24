@@ -16,6 +16,10 @@ string::string(const char* str){
   this->p[size]='\0';
 }
 
+string::~string(){
+  delete p;
+}
+
 const char* string::get_str() const {
   return p;
 }

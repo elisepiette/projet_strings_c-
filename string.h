@@ -7,6 +7,9 @@ class string {
     string(const char* str);
     //string(const string *str);
 
+    //destructor
+    ~string();
+
     //accessor
     const char* get_str() const;
     size_t size() const;
