@@ -5,9 +5,10 @@ length()
 max_size(): returns the maximum number of characters
 resize(size_t, char): changes the number of characters stored
 operator=(const string&):  assigns values to the string
-operator+(const string&, char):  concatenates two strings or a string and a char
+operator+(const string&, char):  concatenates a string and a char
 
 */
+
 #include<iostream>
 #include "string.h"
 #include <stdio.h>
@@ -65,8 +66,16 @@ string& string::operator= (const string& str){
   this->p[i]='\0';
   return *this;
 }
-/*
-string::operator+(const string&, char){
 
+string operator+(const string& str, char c){
+  char* a=new char[str.size()+1];
+  int i=0;
+  while (i<str.size()){
+    a[i]=str.get_char(i);
+    i++;
+  }
+  a[i]=c;
+  string b =a;
+  delete a;
+  return b;
 }
-*/

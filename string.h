@@ -25,11 +25,11 @@ class string {
     string& operator= (const string& str);
     int max_size();
     string& resize(int size, char ch);
-    //string operator+ (const string&, char);
 
     //studentC
-    string operator=(const char* c);
+    //string operator=(const char* c);
 
 };
 string operator+ (const string& str, const char* a);
 string operator+ (const string&, const string&);
+string operator+ (const string& str, char c);
