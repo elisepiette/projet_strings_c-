@@ -12,8 +12,7 @@ operator+ : Returns a newly constructed string object with its value being the c
 */
 
 const char* string::c_str() const{
-  const char* pbis= p;
-  return pbis ;
+  return p;
 }
 
 //chaque char a une taille de 1 byte
@@ -31,7 +30,7 @@ void string::clear(){
 }
 
 string string::operator= (char c){ //normalement string& au lieu de string
-  delete (p);
+  delete p;
   p = new char[2];
   p[0]=c;
   p[1]='\0';
@@ -40,7 +39,7 @@ string string::operator= (char c){ //normalement string& au lieu de string
   return p;
 }
 string& string::operator= (const string& str){
-  delete (p);
+  delete p;
   p=new char[str.size()];
   int i=0;
   for(i=0;i<str.size();i++){
