@@ -15,11 +15,11 @@ int main(){
   std::cout << "c: " << c.get_str() <<" of length "<<c.get_len()<<std::endl;*/
 
   string a("exemple");
-  std::cout << "a: " << a.get_str() << " of length "<< a.size()<< std::endl;
+  std::cout << "a: " << a.c_str() << " of length "<< a.size()<< std::endl;
   const char* new_p=a.c_str();
   std::cout << "nouveau pointeur : " << new_p<<std::endl;
   string b(a); //ATTENTION crée pointeur vers le même objet
-  std::cout << "b: " << b.get_str() << " of length "<<b.size()<<std::endl;
+  std::cout << "b: " << b.c_str() << " of length "<<b.size()<<std::endl;
   //b.clear();
   //std::cout << "Apres clear, b: " << b.get_str() << " of length "<<b.size()<<std::endl;
   //std::cout << "Apres clear, a: " << a.get_str() << " of length "<<a.size()<<std::endl;

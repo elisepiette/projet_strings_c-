@@ -17,7 +17,6 @@ string::string(const char* str){
 }
 
 string::~string(){
-  delete p;
 }
 
 
