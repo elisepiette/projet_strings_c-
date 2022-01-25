@@ -32,5 +32,6 @@ string operator+(const string& a, const string& b){
   }
   p[size_a+size_b]='\0';
   string result(p);
+  std::cout<<"operateur de studentC"<<std::endl;
   return result;
 }

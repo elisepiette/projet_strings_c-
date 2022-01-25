@@ -11,7 +11,7 @@ operator= : Assigns a new value to the string, replacing its current contents.
 operator+ : Returns a newly constructed string object with its value being the concatenation of the characters in str followed by those of a.
 */
 
-const char* string::c_str() const{
+char* string::c_str() const{ //normalment const
   return p;
 }
 
@@ -29,14 +29,12 @@ void string::clear(){
   p[0]='\0';
 }
 
-string string::operator= (char c){ //normalement string& au lieu de string
+string& string::operator= (char c){
   delete p;
   p = new char[2];
   p[0]=c;
   p[1]='\0';
-  //_len=1;
-  //const char s=_str;
-  return p;
+  return *this;
 }
 
 string operator+ (const string& str, const char* a){
@@ -59,5 +57,7 @@ string operator+ (const string& str, const char* a){
   }
 
   string final(add);
+  delete(add);
+  std::cout<<"operateur de studentA"<<std::endl;
   return final;
 }

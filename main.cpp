@@ -14,31 +14,35 @@ int main(){
   std::cout << "d: " << d.get_str()<<" of length "<<d.get_len()<<std::endl;
   std::cout << "c: " << c.get_str() <<" of length "<<c.get_len()<<std::endl;*/
 
+  std::cout<<"------ Tests Constructeur ------ "<<std::endl;
+  string b;
+  std::cout << "b: " << b.c_str() << " of length "<< b.size()<< std::endl;
   string a("exemple");
   std::cout << "a: " << a.c_str() << " of length "<< a.size()<< std::endl;
+  string c(a);
+  std::cout << "c: " << c.c_str() << " of length "<<c.size()<<std::endl;
+
+  std::cout<<"------ Tests StudentA ------ "<<std::endl;
   const char* new_p=a.c_str();
   std::cout << "nouveau pointeur : " << new_p<<std::endl;
-  //string b(a); //ATTENTION crée pointeur vers le même objet
-  //std::cout << "b: " << b.c_str() << " of length "<<b.size()<<std::endl;
-  //b.clear();
-  //std::cout << "Apres clear, b: " << b.get_str() << " of length "<<b.size()<<std::endl;
-  //std::cout << "Apres clear, a: " << a.get_str() << " of length "<<a.size()<<std::endl;
+  c.clear();
+  std::cout << "Apres clear, c: " << c.c_str() << " of length "<<c.size()<<std::endl;
+  std::cout << "Apres clear, a: " << a.c_str() << " of length "<<a.size()<<std::endl; //on a bien b intact
 
-  string c;
-  c='x';
-  std::cout << "c: " << c.c_str() << " of length "<<c.size()<<std::endl;
+  string c1;
+  c1='x';
+  std::cout << "c1 (test operateur=): " << c1.c_str() << " of length "<<c1.size()<<std::endl;
   string e(" sympa");
   std::cout << "e: " << e.c_str() << " of length "<<e.size()<<std::endl;
   const char* new_p2=e.c_str();
 
   string d;
-  //d=a;
   d=a+new_p2;
   //d.clear();
-  std::cout << "d: " << d.c_str() << " of length "<<d.size()<<std::endl;
-  std::cout << "a: " << a.c_str() << " of length "<< a.size()<< std::endl;
+  std::cout << "d (test operateur+): " << d.c_str() << " of length "<<d.size()<<std::endl;
 
   std::cout<<"------ Tests resize ------ "<<std::endl;
+
   string x;
   x=a.resize(3,'a');
   //x.resize(3,'a');
@@ -50,17 +54,19 @@ int main(){
   std::cout<<"------ Tests student C ------ "<<std::endl;
 
   string s1="Hello";
-  string s2="World";
+  string s2="Woorld";
   string sum=s1+s2;
   std::cout << sum.c_str()<<" of size "<<sum.size()<<std::endl;
 
   std::cout<<"------ Tests operator+(string,char) ------ "<<std::endl;
 
 
-  string y("j'écris en C+");
+  string y("j'ecris en C+");
   y=y+'+';
-  std::cout <<"y: "<<y.c_str()<<" of size "<<y.size()<<std::endl;
-
+  std::cout <<"y: "<<y.c_str()<<" of length "<<y.length()<<std::endl;
+  std::cout <<"max size de y: "<<y.max_size()<<std::endl;
+  s1=s2;
+  std::cout <<"s1 (test operator= B): "<<s1.c_str()<<" of length "<<s1.length()<<std::endl;
   return 0;
 
 }
