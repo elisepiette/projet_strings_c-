@@ -1,7 +1,9 @@
 class string {
   protected:
     char* p;
-
+    size_t _cap;
+    size_t _increase = 15;
+    size_t _maxsize=100;
   public:
     //constructor
     string();
@@ -28,7 +30,10 @@ class string {
 
     //studentC
     //string operator=(const char* c);
-
+    void setCapacity(const size_t cap);
+    size_t capacity() const ;
+    void _increasecap(const size_t n);
+    void reserve(size_t n);
 };
 string operator+ (const string& str, const char* a);
 string operator+ (const string&, const string&);
