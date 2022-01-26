@@ -47,8 +47,8 @@ string::string(const char* str){
 
 string::~string(){
   delete p;
-  setCapacity(0);
-  _increase=0;
+  //setCapacity(0);
+  //_increase=0;
 }
 
 const char string::get_char(int i) const {
@@ -60,17 +60,17 @@ size_t string::capacity() const {
 }
 
 void string::setCapacity(const size_t cap) {
-	if (this->_cap == cap && this->p) {// capacity set
-		return;}
 	if (cap < this->size()){ // capacity less than size of the string
-		return;}
+		return;
+  }
 	this->_cap = cap; // set capacity
   char* s= new char[this->size()];
   memcpy(s,p,this->size());
 	delete(p);
   p=new char[cap];
 	for (int i = 0; i < this->size(); ++i){
-	this->p[i] = s[i];}
+	   this->p[i] = s[i];
+  }
 	this->p[this->size()] = '\0';
 	delete(s);
 }
