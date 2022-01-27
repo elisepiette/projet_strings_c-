@@ -3,10 +3,11 @@
 #include "string.h"
 
 string::string(){
-  //setCapacity(1);
+
   //p=new char[_cap];
   p=new char[1];
   p[0]='\0';
+  setCapacity(1);
   //std::cout<<"Je suis un string nul"<<std::endl;
 }
 
@@ -25,13 +26,19 @@ string::string(const string& s){
   //memcpy(p,s.c_str(), cap);
   int size=i;
   memcpy(p,s.c_str(), size);
+  setCapacity(size);
 }
 
 
 string::string(const char* str){
   //setCapacity(10);
   //p = new char[_cap];
-  p = new char[10];
+  int j =0;
+  while (str[j]!='\0'){
+    j+=1;
+  }
+
+  p = new char[j];
   int i=0;
   while (str[i]!='\0'){
     p[i]=str[i];
@@ -41,7 +48,8 @@ string::string(const char* str){
   int size=i;
   //memcpy(p,str, size);
   this->p[size]='\0';
-  setCapacity(10);
+  //std::cout<<j<<std::endl;
+  setCapacity(j);
   //std::cout<<"Je suis un string construit à partir d'un pointeur"<<std::endl;
 }
 
@@ -62,7 +70,12 @@ size_t string::capacity() const {
 
 void string::setCapacity(const size_t cap) {
 	if (cap < this->size()){ // capacity less than size of the string
+    std::cout<<"Capacity lower than the size of the string, current size : "<< this->size()<<std::endl;
 		return;
+  }
+  if (cap>this->max_size()){
+    std::cout<<"Capacity bigger than the maxsize : "<< this->max_size()<< std::endl;
+    return;
   }
 	this->_cap = cap; // set capacity
   int size = this->size();

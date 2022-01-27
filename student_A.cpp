@@ -34,6 +34,7 @@ string& string::operator= (char c){
   p = new char[2];
   p[0]=c;
   p[1]='\0';
+  setCapacity(2);
   return *this;
 }
 

@@ -16,11 +16,11 @@ int main(){
 
   std::cout<<"------ Tests Constructeur ------ "<<std::endl;
   string b;
-  std::cout << "b: " << b.c_str() << " of length "<< b.size()<< std::endl;
+  std::cout << "b: " << b.c_str() << " of length "<< b.size()<< " and capacity "<<b.capacity()<<std::endl;
   string a("exemple");
-  std::cout << "a: " << a.c_str() << " of length "<< a.size()<< std::endl;
+  std::cout << "a: " << a.c_str() << " of length "<< a.size()<< " and capacity "<<a.capacity()<<std::endl;
   string c(a);
-  std::cout << "c: " << c.c_str() << " of length "<<c.size()<<std::endl;
+  std::cout << "c: " << c.c_str() << " of length "<<c.size()<<" and capacity "<<c.capacity()<<std::endl;
 
   std::cout<<"------ Tests StudentA ------ "<<std::endl;
   const char* new_p=a.c_str();
@@ -39,7 +39,7 @@ int main(){
   string d;
   d=a+new_p2;
   //d.clear();
-  std::cout << "d (test operateur+): " << d.c_str() << " of length "<<d.size()<<std::endl;
+  std::cout << "d (test operateur+): " << d.c_str() << " of length "<<d.size()<<" and capacity "<<d.capacity()<<std::endl;
 
   std::cout<<"------ Tests resize ------ "<<std::endl;
 
@@ -72,9 +72,11 @@ int main(){
   std::cout<<"------ Tests capacity ------ "<<std::endl;
   string e1("csympa");
   std::cout <<"e1: "<<e1.c_str()<<" of capacity "<<e1.capacity()<<std::endl;
-  e1.setCapacity(50);
+  e1.setCapacity(5);
   std::cout <<"e1: "<<e1.c_str()<<" of capacity "<<e1.capacity()<<std::endl;
-  e1.reserve(60);
+  e1.reserve(101);
+  std::cout <<"e1: "<<e1.c_str()<<" of capacity "<<e1.capacity()<<std::endl;
+  e1.reserve(70);
   std::cout <<"e1: "<<e1.c_str()<<" of capacity "<<e1.capacity()<<std::endl;
   e1._increasecap(20);
   std::cout <<"e1: "<<e1.c_str()<<" of capacity "<<e1.capacity()<<std::endl;
