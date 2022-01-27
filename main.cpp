@@ -1,8 +1,9 @@
 #include <iostream>
 #include "string.h"
+#include <stdbool.h>
 
 int main(){
-
+  std::cout.setf(std::ios::boolalpha);
   //test constructeur
   /*string a;
   string b("exemple");
@@ -52,11 +53,19 @@ int main(){
   std::cout << "x: " << x.c_str() << " of length "<<x.size()<<std::endl;
 
   std::cout<<"------ Tests student C ------ "<<std::endl;
+  string s3;
+  s3="Moonriver is a song";
+  std::cout << "s3: " << s3.c_str() << " of length "<< s3.size()<< std::endl;
 
   string s1="Hello";
   string s2="Woorld";
   string sum=s1+s2;
   std::cout << sum.c_str()<<" of size "<<sum.size()<<std::endl;
+  std::cout<< sum.c_str() <<" is empty: "<<sum.empty()<<std::endl;
+  sum.clear();
+  std::cout<< "But after clearance is it empty: "<<sum.empty()<<std::endl;
+
+  //std::cout<<"The capacity is "<<sum.capacity()<<std::endl;
 
   std::cout<<"------ Tests operator+(string,char) ------ "<<std::endl;
 
@@ -67,6 +76,7 @@ int main(){
   std::cout <<"max size de y: "<<y.max_size()<<std::endl;
   s1=s2;
   std::cout <<"s1 (test operator= B): "<<s1.c_str()<<" of length "<<s1.length()<<std::endl;
+
   return 0;
 
 }

@@ -57,7 +57,7 @@ string operator+ (const string& str, const char* a){
   }
 
   string final(add);
-  delete(add);
+  delete[] add;
   std::cout<<"operateur de studentA"<<std::endl;
   return final;
 }

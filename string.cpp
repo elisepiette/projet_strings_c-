@@ -25,7 +25,7 @@ string::string(const string& s){
 
 
 string::string(const char* str){
-  p = new char[10];
+  p = new char[100];
   int i=0;
   while (str[i]!='\0'){
     p[i]=str[i];
@@ -40,6 +40,7 @@ string::string(const char* str){
 
 string::~string(){
   delete p;
+  std::cout<<"Destructor called"<<std::endl;
 }
 
 const char string::get_char(int i) const {

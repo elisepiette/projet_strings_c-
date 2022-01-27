@@ -1,3 +1,5 @@
+#include <stdbool.h>
+
 class string {
   protected:
     char* p;
@@ -27,7 +29,10 @@ class string {
     string& resize(int size, char ch);
 
     //studentC
-    //string operator=(const char* c);
+    size_t capacity() const;
+    bool empty() const;
+    string& operator=(const char* c);
+
 
 };
 string operator+ (const string& str, const char* a);

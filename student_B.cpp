@@ -38,7 +38,7 @@ string& string::resize(int size, char c){
       i++;
     }
     this->p[i]='\0';
-    delete (s); //ajout
+    delete[] s; //ajout
   }
 
   return *this;
@@ -79,7 +79,7 @@ string operator+(const string& str, char c){
   a[i]=c;
   a[i+1]='\0'; //ajout
   string b(a);
-  delete a;
+  delete[] a;
   std::cout<<"operateur de studentB"<<std::endl;
   return b;
 }
