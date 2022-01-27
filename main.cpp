@@ -67,6 +67,20 @@ int main(){
   std::cout <<"max size de y: "<<y.max_size()<<std::endl;
   s1=s2;
   std::cout <<"s1 (test operator= B): "<<s1.c_str()<<" of length "<<s1.length()<<std::endl;
+
+
+  std::cout<<"------ Tests capacity ------ "<<std::endl;
+  string e1("csympa");
+  std::cout <<"e1: "<<e1.c_str()<<" of capacity "<<e1.capacity()<<std::endl;
+  e1.setCapacity(50);
+  std::cout <<"e1: "<<e1.c_str()<<" of capacity "<<e1.capacity()<<std::endl;
+  e1.reserve(60);
+  std::cout <<"e1: "<<e1.c_str()<<" of capacity "<<e1.capacity()<<std::endl;
+  e1._increasecap(20);
+  std::cout <<"e1: "<<e1.c_str()<<" of capacity "<<e1.capacity()<<std::endl;
+  e1._increasecap(40);
+  std::cout <<"e1: "<<e1.c_str()<<" of capacity "<<e1.capacity()<<std::endl;
+
   return 0;
 
 }

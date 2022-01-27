@@ -41,6 +41,7 @@ string::string(const char* str){
   int size=i;
   //memcpy(p,str, size);
   this->p[size]='\0';
+  setCapacity(10);
   //std::cout<<"Je suis un string construit à partir d'un pointeur"<<std::endl;
 }
 
@@ -64,27 +65,36 @@ void string::setCapacity(const size_t cap) {
 		return;
   }
 	this->_cap = cap; // set capacity
-  char* s= new char[this->size()];
-  memcpy(s,p,this->size());
+  int size = this->size();
+  char* s= new char[size];
+  memcpy(s,p,size);
+  //std::cout<<s<<std::endl;
 	delete(p);
   p=new char[cap];
-	for (int i = 0; i < this->size(); ++i){
+	for (int i = 0; i < size; i++){
 	   this->p[i] = s[i];
+     //std::cout<<p[i]<<std::endl;
   }
-	this->p[this->size()] = '\0';
+	this->p[size] = '\0';
 	delete(s);
 }
 
 void string::_increasecap(const size_t n) {
-	if (this->_cap > n && p){
+  if ((this->_cap + n) > this->max_size()){
+    std::cout<<"Not possible to increase, maxsize : "<< this->max_size()<< ", current capacity : "<<this->_cap<<std::endl;
+    return;
+  }
+
+	/*if (this->_cap > n && p){
     return;
   }
 	size_t cap = _cap;
 	while (cap <= n){
 		cap += _increase;
+    std::cout<<cap<<std::endl;
 	_increase ++;
-  }
-	setCapacity(cap);
+}*/
+	setCapacity(this->_cap+n);
 }
 
 void string::reserve(size_t n) {
