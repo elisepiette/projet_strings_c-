@@ -3,10 +3,11 @@
 #include "string.h"
 
 string::string(){
-  //setCapacity(1);
+
   //p=new char[_cap];
   p=new char[1];
   p[0]='\0';
+  setCapacity(1);
   //std::cout<<"Je suis un string nul"<<std::endl;
 }
 
@@ -25,13 +26,19 @@ string::string(const string& s){
   //memcpy(p,s.c_str(), cap);
   int size=i;
   memcpy(p,s.c_str(), size);
+  setCapacity(size);
 }
 
 
 string::string(const char* str){
   //setCapacity(10);
   //p = new char[_cap];
-  p = new char[10];
+  int j =0;
+  while (str[j]!='\0'){
+    j+=1;
+  }
+
+  p = new char[j];
   int i=0;
   while (str[i]!='\0'){
     p[i]=str[i];
@@ -41,6 +48,8 @@ string::string(const char* str){
   int size=i;
   //memcpy(p,str, size);
   this->p[size]='\0';
+  //std::cout<<j<<std::endl;
+  setCapacity(j);
   //std::cout<<"Je suis un string construit à partir d'un pointeur"<<std::endl;
 }
 
@@ -62,7 +71,8 @@ size_t string::capacity() const {
 
 void string::setCapacity(const size_t cap) {
 	if (cap < this->size()){ // capacity less than size of the string
-		return;
+
+/*		return;
   }
 	this->_cap = cap; // set capacity
   char* s= new char[this->size()];
@@ -73,19 +83,45 @@ void string::setCapacity(const size_t cap) {
 	   this->p[i] = s[i];
   }
 	this->p[this->size()] = '\0';
+*/
+    std::cout<<"Capacity lower than the size of the string, current size : "<< this->size()<<std::endl;
+		return;
+  }
+  if (cap>this->max_size()){
+    std::cout<<"Capacity bigger than the maxsize : "<< this->max_size()<< std::endl;
+    return;
+  }
+	this->_cap = cap; // set capacity
+  int size = this->size();
+  char* s= new char[size];
+  memcpy(s,p,size);
+  //std::cout<<s<<std::endl;
+	delete(p);
+  p=new char[cap];
+	for (int i = 0; i < size; i++){
+	   this->p[i] = s[i];
+     //std::cout<<p[i]<<std::endl;
+  }
+	this->p[size] = '\0';
 	delete(s);
 }
 
 void string::_increasecap(const size_t n) {
-	if (this->_cap > n && p){
+  if ((this->_cap + n) > this->max_size()){
+    std::cout<<"Not possible to increase, maxsize : "<< this->max_size()<< ", current capacity : "<<this->_cap<<std::endl;
+    return;
+  }
+
+	/*if (this->_cap > n && p){
     return;
   }
 	size_t cap = _cap;
 	while (cap <= n){
 		cap += _increase;
+    std::cout<<cap<<std::endl;
 	_increase ++;
-  }
-	setCapacity(cap);
+}*/
+	setCapacity(this->_cap+n);
 }
 
 void string::reserve(size_t n) {

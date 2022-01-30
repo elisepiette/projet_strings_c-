@@ -66,6 +66,7 @@ string& string::operator= (const string& str){
 
   }
   this->p[i]='\0';
+  setCapacity(str.size());
   return *this;
 }
 
