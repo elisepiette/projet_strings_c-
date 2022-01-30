@@ -3,15 +3,19 @@
 #include <stdbool.h>
 
 
-/*size_t string::capacity() const{
-  return sizeof *p;
-}
-*/
 // empty() Returns whether the string is empty (i.e. whether its length is 0).
 // true if the string length is 0, false otherwise.
 bool string::empty() const{
   int size_= this->length();
   return size_==0;
+}
+
+// reserve() If n is greater than the current string capacity, the function causes
+// the container to increase its capacity to n characters (or greater).
+void string::reserve(size_t n) {
+	if (_cap < n) {
+		setCapacity(n-1);
+	}
 }
 
 
@@ -27,6 +31,7 @@ string& string::operator=(const char* c){
   int size = i;
   p[size]='\0';
   this->resize(size, '\0');
+  this->setCapacity(size);
   return *this;
   }
 
@@ -46,6 +51,7 @@ string operator+(const string& a, const string& b){
   }
   p[size_a+size_b]='\0';
   string result(p);
+  result.setCapacity(size_a+size_b);
   delete[] p;
   return result;
 }

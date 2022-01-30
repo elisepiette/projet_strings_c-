@@ -91,13 +91,13 @@ void string::setCapacity(const size_t cap) {
     std::cout<<"Capacity bigger than the maxsize : "<< this->max_size()<< std::endl;
     return;
   }
-	this->_cap = cap; // set capacity
+	this->_cap = cap+1; // set capacity
   int size = this->size();
   char* s= new char[size];
   memcpy(s,p,size);
   //std::cout<<s<<std::endl;
 	delete(p);
-  p=new char[cap];
+  p=new char[cap+1];
 	for (int i = 0; i < size; i++){
 	   this->p[i] = s[i];
      //std::cout<<p[i]<<std::endl;
@@ -122,14 +122,4 @@ void string::_increasecap(const size_t n) {
 	_increase ++;
 }*/
 	setCapacity(this->_cap+n);
-}
-
-void string::reserve(size_t n) {
-	if (_cap == n) {
-    return;
-  }
-	if (_cap < n) {
-		setCapacity(n);
-		return;
-	}
 }
