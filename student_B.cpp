@@ -53,7 +53,7 @@ int string::length() const{
 }
 
 int string::max_size(){
-  return 100;
+  return _maxsize;
 }
 
 
