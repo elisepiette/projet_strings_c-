@@ -3,8 +3,6 @@
 #include "string.h"
 
 string::string(){
-
-  //p=new char[_cap];
   p=new char[1];
   p[0]='\0';
   setCapacity(1);
@@ -12,18 +10,8 @@ string::string(){
 }
 
 string::string(const string& s){
-  //int i = s._cap;
   int i = s.size();
   p = new char[i];
-  //ps=s.c_str();
-  //int i=0;
-  //std::cout<<"Je suis un string construit par copy"<<std::endl;
-  /*while (str[i]!='\0'){
-    p[i]=str[i];
-    i+=1;
-  }*/
-  //int cap=i;
-  //memcpy(p,s.c_str(), cap);
   int size=i;
   memcpy(p,s.c_str(), size);
   setCapacity(size);
@@ -31,25 +19,23 @@ string::string(const string& s){
 
 
 string::string(const char* str){
-  //setCapacity(10);
-  //p = new char[_cap];
-  int j =0;
-  while (str[j]!='\0'){
+  int j =0; //on initialise une compteur à 0
+  while (str[j]!='\0'){ //on compte le nombre d'élément dans la cible str
     j+=1;
   }
-
-  p = new char[j];
-  int i=0;
-  while (str[i]!='\0'){
-    p[i]=str[i];
-    i+=1;
-    //_increasecap(this->size());
+  if (j>_maxsize){
+    std::cout<<" Vous avez essayé de créer un string de taillle: "<<j<<" >_maxsize = 100"<<std::endl;
+    j=_maxsize;
   }
-  int size=i;
-  //memcpy(p,str, size);
-  this->p[size]='\0';
-  //std::cout<<j<<std::endl;
-  setCapacity(j);
+  p = new char[j]; //on initialise notre string à la taille de str
+  this->setCapacity(j);
+  int i=0;
+  while (str[i]!='\0' && i<_maxsize){
+    p[i]=str[i]; //on copie chaque valeur de str
+    i+=1;
+  }
+  this->p[i]='\0';//ajout du denrier caractere
+
   //std::cout<<"Je suis un string construit à partir d'un pointeur"<<std::endl;
 }
 
@@ -57,7 +43,6 @@ string::string(const char* str){
 string::~string(){
   delete p;
   //setCapacity(0);
-  //_increase=0;
   std::cout<<"Destructor called"<<std::endl;
 }
 

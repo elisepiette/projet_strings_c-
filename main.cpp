@@ -28,8 +28,13 @@ int main(){
   string c(a);
   std::cout << "c: " << c.c_str() << " of length "<<c.size()<<" and capacity "<<c.capacity()<<std::endl;
 
+  //Constructeur à partir d'un c-string nplus long que maxsize
+  string max("ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooAAA");
+  std::cout << "max: " << max.c_str() << " of length "<< max.size()<< " and capacity "<<max.capacity()<<std::endl;
 
-
+  //Constructeur copy d'un string de 100
+  string max_c(max);
+  std::cout << "max_c: " << max_c.c_str() << " of length "<<max_c.size()<<" and capacity "<<max_c.capacity()<<std::endl;
 
 
 
@@ -71,10 +76,10 @@ int main(){
   x=a.resize(3,'a');
   std::cout << "x prend la valeur a resized à 3: " << x.c_str() << " of length "<<x.size()<<std::endl;
   std::cout << "a: " << a.c_str() << " of length "<< a.size()<< std::endl;
-  x.resize(120,'o');
+  x.resize(120,'o'); //on tste les limites au dela de 100 caractères (size et capacity) pour la fonction resize
   std::cout << "x: " << x.c_str() << " of length "<<x.size()<< " and of capacity  "<<x.capacity()<<std::endl;
   string w;
-  w=x+'a';
+  w=x+'a'; //on teste les limites au dela de 100 caractères (size et capcity) pour la fonction operator+ (string + char)
   std::cout << "w: " << w.c_str() << " of length "<<w.size()<< " and of capacity  "<<w.capacity()<<std::endl;
   //Operateur+(const string&, char)
   string y("j'ecris en C+");

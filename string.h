@@ -2,10 +2,10 @@
 
 class string {
   protected:
-    char* p;
-    size_t _cap;
-    size_t _increase = 15;
-    size_t _maxsize=100;
+    char* p; //attribut pointeur vers tableau de char
+    size_t _cap; //attribut capacité
+    //size_t _increase = 15;
+    size_t _maxsize=100; //attribut taille max d'un string
   public:
     //constructor
     string();
