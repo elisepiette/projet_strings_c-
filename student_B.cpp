@@ -39,7 +39,7 @@ string& string::resize(int size, char c){
       p[i]=s[i]; //on copie s dans le nouveau p
     }
     while (i<size){
-      this->p[i]=c; // on ajoute le caractere autant de fois qu'iol faut pour atteindre size
+      this->p[i]=c; // on ajoute le caractere autant de fois qu'il faut pour atteindre size
       i++;
     }
     this->p[i]='\0'; //ajout du dernier caractere
@@ -67,7 +67,7 @@ string& string::operator= (const string& str){
   p=new char[str.size()]; //on créé un nouveau p de la taille du str à copier
   int i=0;
   for(i=0;i<str.size();i++){
-    this->p[i]=str.p[i]; //oncopie str pour chaque caractère
+    this->p[i]=str.p[i]; //on copie str pour chaque caractère
 
   }
   this->p[i]='\0'; //ajout du dernier caractère

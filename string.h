@@ -16,7 +16,7 @@ class string {
     ~string();
 
     //accessor
-    char* c_str() const;
+    const char* c_str() const;
     size_t size() const;
     int length() const;
 
