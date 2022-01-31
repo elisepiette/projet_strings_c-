@@ -25,13 +25,13 @@ string& string::resize(int size, char c){
     otherwise, they are value-initialized characters (null characters).*/
 
     char* s= new char[size];
+    int siz = this->size();
     memcpy(s,p,this->size());
     delete (p);
     p=new char[size];
     int i=0;
-    while(s[i]!='\0' && i<100){
+    for(i; i<siz;i++){
       p[i]=s[i];
-      i++;
     }
     while (i<size){
       this->p[i]=c;
