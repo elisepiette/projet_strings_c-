@@ -67,13 +67,15 @@ int main(){
 
   //Fonctions resize() et length()
   string x;
+  std::cout << "a initiale: " << a.c_str() << " of length "<< a.size()<< std::endl;
   x=a.resize(3,'a');
-  //x.resize(3,'a');
   std::cout << "x prend la valeur a resized à 3: " << x.c_str() << " of length "<<x.size()<<std::endl;
   std::cout << "a: " << a.c_str() << " of length "<< a.size()<< std::endl;
-  x.resize(10,'o');
-  std::cout << "x: " << x.c_str() << " of length "<<x.size()<<std::endl;
-
+  x.resize(120,'o');
+  std::cout << "x: " << x.c_str() << " of length "<<x.size()<< " and of capacity  "<<x.capacity()<<std::endl;
+  string w;
+  w=x+'a';
+  std::cout << "w: " << w.c_str() << " of length "<<w.size()<< " and of capacity  "<<w.capacity()<<std::endl;
   //Operateur+(const string&, char)
   string y("j'ecris en C+");
   y=y+'+';
