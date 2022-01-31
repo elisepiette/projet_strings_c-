@@ -71,7 +71,7 @@ string& string::operator= (const string& str){
 
   }
   this->p[i]='\0'; //ajout du dernier caractère
-  setCapacity(str.size()); // la il faudrait plus mettre increase en sécurité car le tableau est deja de capacité str;size
+  setCapacity(str.size());
   return *this;
 }
 
