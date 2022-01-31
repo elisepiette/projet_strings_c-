@@ -88,9 +88,9 @@ int main(){
   std::cout <<"s1 (test operator= B): "<<s1.c_str()<<" of length "<<s1.length()<<" and of capacity  "<<s1.capacity()<<std::endl;
 
 
-
-
   std::cout<<" "<<std::endl;
+
+
   std::cout<<"------ Tests StudentC ------ "<<std::endl;
 
   //Operateur=(const char*)
@@ -102,6 +102,12 @@ int main(){
   string sum=s1+s2;
   std::cout<< "Test de l'operator+(const string& a, const string& b) : "<<std::endl;
   std::cout << sum.c_str()<<" of size "<<sum.size()<<std::endl;
+  // Test de la limite de 100 charactères :
+  string small="Hey";
+  string big="yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy";
+  std::cout<<"The small string size is "<<small.size()<<" and the big string is "<<big.size()<<std::endl;
+  string merge=small+big;
+  std::cout<<"Test limits of operator+ : "<<merge.c_str()<< " of capacity "<< merge.capacity()<<std::endl;
 
   //Fonction empty()
   std::cout<< sum.c_str() <<" is empty: "<<sum.empty()<<std::endl;

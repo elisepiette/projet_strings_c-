@@ -40,6 +40,7 @@ string& string::operator=(const char* c){
 string operator+(const string& a, const string& b){
   int size_a=a.size();
   int size_b=b.size();
+  if (size_a+size_b <100){
   char* p = new char[size_a+size_b];
   for (int i=0; i!=size_a; ++i){
     p[i]=a.c_str()[i];
@@ -54,4 +55,9 @@ string operator+(const string& a, const string& b){
   result.setCapacity(size_a+size_b);
   delete[] p;
   return result;
+ }
+ else{
+   std::cout<<"Size max atteinte"<<std::endl;
+   return a;
+ }
 }
