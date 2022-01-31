@@ -51,9 +51,6 @@ const char string::get_char(int i) const {
   return p[i];
 }
 
-size_t string::capacity() const {
-	return _cap;
-}
 
 void string::setCapacity(const size_t cap) {
 	if (cap < this->size()){ // capacity less than size of the string
